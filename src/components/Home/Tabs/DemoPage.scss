@@ -1,0 +1,62 @@
+/**/
+.visible.transition {
+  margin-top: auto !important;
+  display: inline-block !important;
+  position: relative;
+  top: 20%;
+  left: 25%;
+  right: 25%;
+}
+
+.modalBlock.visible.transition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .visible.transition {
+    display: flex;
+  }
+}
+
+.ui.page.modals.dimmer.transition.visible.active {
+  display: flex;
+  .visible.transition {
+    display: flex;
+  }
+  .ui.modal.transition.visible.active {
+    display: flex;
+    .visible.transition {
+      display: flex;
+    }
+  }
+
+}
+
+.DemoPage {
+  background: transparent;
+  .category {
+
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .item {
+      width: 33%;
+      border: 1px solid sandybrown;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      .category {
+        display: flex;
+        flex-direction: row;
+        .list {
+
+        }
+      }
+    }
+    .item:hover {
+      opacity: .8;
+    }
+  }
+}
