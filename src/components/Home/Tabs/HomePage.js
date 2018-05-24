@@ -3,14 +3,22 @@ import './HomePage.css';
 import { Parallax, Background } from 'react-parallax';
 import BgOne from '../../../assets/Home/bg-one.jpg';
 import {Animated} from "react-animated-css";
+import Clock from 'react-live-clock';
 import $ from 'jquery';
+//icons
+import IconRepeat from 'react-icons/lib/fa/repeat'
+import IconGithub from 'react-icons/lib/fa/github'
+import IconWindows from 'react-icons/lib/fa/windows'
+
+
 
 
 class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showBanner: false
+            showBanner: false,
+            clock: new Date()
         }
     }
 
@@ -32,17 +40,10 @@ class HomePage extends Component {
         });
 
         $(window).scroll(function() {
-            if ($(this).scrollTop()>50)
-            {
-                $('.contentTitle').fadeIn("slow");
-            }
-            if ($(this).scrollTop()>450)
-            {
-                $('.contentTitle').addClass("scrollContent");
-            }
             if ($(this).scrollTop()>750)
             {
-
+                $('.contentTitle').fadeIn("slow");
+                $('.contentTitle').addClass("scrollContent");
                 $('.contentDesc').fadeIn("slow");
                 $('.contentTitle').css({position: 'fixed'});
             }
@@ -51,7 +52,7 @@ class HomePage extends Component {
                 $('.contentDesc').hide();
                 $('.contentTitle').css({position: 'absolute'});
             }
-            if ($(this).scrollTop()<450)
+            if ($(this).scrollTop()<700)
             {
                 $('.contentTitle').removeClass("scrollContent");
             }
@@ -64,6 +65,10 @@ class HomePage extends Component {
     }
 
     render() {
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const d = new Date();
         return (
             <Animated animationIn="flash" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                 <div className="HomePage">
@@ -87,22 +92,26 @@ class HomePage extends Component {
                     </Parallax>
                     <div className="contentTitle">
                         <div id="secondMenu" className="items">
-                            <div className="item">HOME</div>
-                            <div className="item">DEMO</div>
-                            <div className="item">ABOUT</div>
+                            <div className="item"><IconRepeat size={50} /></div>
+                            <div className="item"><IconGithub size={50} /></div>
+                            <div className="item"><IconWindows size={50} /></div>
                         </div>
                     </div>
                     <div className="contentDesc">
-                        <div className="title">
-                            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
-                                <div>
-                                    TITLE
+                        <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                            <div className="timeBlock">
+                                <Clock
+                                    className="clock"
+                                    format={'h:mm:ss'}
+                                    ticking={true}
+                                />
+                                <div className="month">
+                                    <span>{this.state.clock.getDate()}</span>
+                                    <span>{monthNames[d.getMonth()]}</span>
                                 </div>
-                            </Animated>
-                        </div>
-                        <div className="desc">RANDOM TEXT</div>
+                            </div>
+                        </Animated>
                     </div>
-
                 </div>
             </Animated>
 

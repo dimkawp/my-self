@@ -8,10 +8,10 @@ import imgWork3_0 from '../../../assets/imgMyProjects/work3.0.png';
 import imgWork4_0 from '../../../assets/imgMyProjects/work4.0.png';
 import imgWork5_0 from '../../../assets/imgMyProjects/work5.0.png';
 
-
 class DemoPage extends Component {
     constructor(props) {
         super(props);
+        this._handleScroll = this._handleScroll.bind(this);
         this.state = {
             array: [
                 { id: 1, title: 'YTC',
@@ -44,19 +44,141 @@ class DemoPage extends Component {
                   category: ['css','jQuery'],
                   img: imgWork5_0
                 },
+                { id: 6, title: 'YTC',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','ruby','angular'],
+                    img: imgWork1_0
+                },
+                { id: 7, title: 'Homework-13.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork2_0
+                },
+                { id: 8, title: 'Homework-14.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork3_0
+                },
+                { id: 9, title: 'Homework-1.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','jQuery'],
+                    img: imgWork4_0
+                },
+                { id: 10, title: 'Homework-2.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info2',
+                    category: ['css','jQuery'],
+                    img: imgWork5_0
+                },
+
+                { id: 11, title: 'YTC',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','ruby','angular'],
+                    img: imgWork1_0
+                },
+                { id: 12, title: 'Homework-13.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork2_0
+                },
+                { id: 13, title: 'Homework-14.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork3_0
+                },
+                { id: 14, title: 'Homework-1.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','jQuery'],
+                    img: imgWork4_0
+                },
+                { id: 15, title: 'Homework-2.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info2',
+                    category: ['css','jQuery'],
+                    img: imgWork5_0
+                },
+                { id: 16, title: 'YTC',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','ruby','angular'],
+                    img: imgWork1_0
+                },
+                { id: 17, title: 'Homework-13.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork2_0
+                },
+                { id: 18, title: 'Homework-14.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','react','jQuery'],
+                    img: imgWork3_0
+                },
+                { id: 19, title: 'Homework-1.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info',
+                    category: ['css','jQuery'],
+                    img: imgWork4_0
+                },
+                { id: 20, title: 'Homework-2.0',
+                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    description:'about project info2',
+                    category: ['css','jQuery'],
+                    img: imgWork5_0
+                },
 
             ],
-            workArray: []
+            workArray: [],
+            scrolled: false,
+            arrayCountShow: 9
+
         }
     }
     componentWillMount(){
         this.state.workArray = this.state.array;
+        window.onscroll = () => this._handleScroll();
 
     }
 
     //BUTTON ADD Project
     addProjectEvent = () => {
         console.log('add');
+    }
+    _handleScroll() {
+        console.log('scrolling:', document.documentElement.scrollTop);
+        if (document.documentElement.scrollTop > 0) {
+            this.setState({ scrolled: true });
+            console.log(this.state.scrolled);
+        } else {
+            this.setState({ scrolled: false });
+            console.log(this.state.scrolled);
+        }
+        if (document.documentElement.scrollTop > 600) {
+            //setTimeout(() => {},500);
+            this.setState({ arrayCountShow: 12 });
+
+        } else {
+            this.setState({ arrayCountShow: 9 });
+        }
+        if (document.documentElement.scrollTop > 700) {
+            this.setState({ arrayCountShow: 15 });
+        } else {
+
+        }
+        if (document.documentElement.scrollTop > 750) {
+            this.setState({ arrayCountShow: this.state.array.length });
+        } else {
+
+        }
     }
     categoryAll = () => {
         let data = this.state.array.filter(function(item){
@@ -132,8 +254,9 @@ class DemoPage extends Component {
     render() {
 
         return (
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
-                <div className="demoPage">
+
+                <div className="demoPage" onScroll={this._handleScroll} >
+                    <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                     <div className="category">
                         <Button basic color='orange' onClick={this.categoryAll}>all</Button>
                         <Button basic color='orange' onClick={this.categoryRuby}>Ruby</Button>
@@ -142,9 +265,11 @@ class DemoPage extends Component {
                         <Button basic color='orange' onClick={this.categoryReact}>React</Button>
                         <Button basic color='orange' onClick={this.categoryjQuery}>jQuery</Button>
                     </div>
+                    </Animated>
+                    <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
                     <div className="items">
                         {
-                            this.state.workArray.map((item) => {
+                            this.state.workArray.slice(0,this.state.arrayCountShow).map((item) => {
                                 return (
                                     <div key={item.id} className="item">
                                         <img src={item.img} alt="" width="32%" height="250px"/>
@@ -175,8 +300,9 @@ class DemoPage extends Component {
                             })
                         }
                     </div>
+                    </Animated>
                 </div>
-            </Animated>
+
         );
     }
 }
