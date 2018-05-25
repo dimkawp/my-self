@@ -154,28 +154,25 @@ class DemoPage extends Component {
         console.log('add');
     }
     _handleScroll() {
-        console.log('scrolling:', document.documentElement.scrollTop);
-        if (document.documentElement.scrollTop > 0) {
-            this.setState({ scrolled: true });
-            console.log(this.state.scrolled);
-        } else {
-            this.setState({ scrolled: false });
-            console.log(this.state.scrolled);
-        }
-        if (document.documentElement.scrollTop > 600) {
+        if (document.documentElement.scrollTop > 500) {
             //setTimeout(() => {},500);
             this.setState({ arrayCountShow: 12 });
-
+            console.log(document.documentElement.scrollTop);
+            console.log('12');
         } else {
-            this.setState({ arrayCountShow: 9 });
+
+        }
+        if (document.documentElement.scrollTop > 600) {
+            this.setState({ arrayCountShow: 15 });
+            console.log(document.documentElement.scrollTop);
+            console.log('15');
+        } else {
+
         }
         if (document.documentElement.scrollTop > 700) {
-            this.setState({ arrayCountShow: 15 });
-        } else {
-
-        }
-        if (document.documentElement.scrollTop > 750) {
-            this.setState({ arrayCountShow: this.state.array.length });
+            this.setState({ arrayCountShow: 18 });
+            console.log(document.documentElement.scrollTop);
+            console.log('18');
         } else {
 
         }

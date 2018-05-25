@@ -17,7 +17,7 @@
       }
       .item:hover {
         cursor: pointer;
-        background-color: red;
+        background-color: #FD630B;
         transition: 0.9s;
         opacity: 1;
       }
@@ -49,6 +49,11 @@
         }
       }
     }
+  }
+  .contentDesc:hover {
+    transition: .9s;
+    cursor: pointer;
+    background-color: #FD630B;
   }
   .scrollContent {
     transition: 2s;
