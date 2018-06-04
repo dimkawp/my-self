@@ -11,7 +11,6 @@ import imgWork5_0 from '../../../assets/imgMyProjects/work5.0.png';
 class DemoPage extends Component {
     constructor(props) {
         super(props);
-        this._handleScroll = this._handleScroll.bind(this);
         this.state = {
             array: [
                 { id: 1, title: 'YTC',
@@ -145,7 +144,7 @@ class DemoPage extends Component {
     }
     componentWillMount(){
         this.state.workArray = this.state.array;
-        window.onscroll = () => this._handleScroll();
+        window.onscroll = () => this.handleScroll();
 
     }
 
@@ -153,23 +152,30 @@ class DemoPage extends Component {
     addProjectEvent = () => {
         console.log('add');
     }
-    _handleScroll() {
-        if (document.documentElement.scrollTop > 500) {
+    handleScroll = () => {
+        if (document.documentElement.scrollTop > 500 && document.documentElement.scrollTop < 600) {
             //setTimeout(() => {},500);
+            this.setState({ arrayCountShow: 9 });
+            console.log(document.documentElement.scrollTop);
+            console.log('9');
+        } else {
+
+        }
+        if (document.documentElement.scrollTop > 600 && document.documentElement.scrollTop < 700) {
             this.setState({ arrayCountShow: 12 });
             console.log(document.documentElement.scrollTop);
             console.log('12');
         } else {
 
         }
-        if (document.documentElement.scrollTop > 600) {
+        if (document.documentElement.scrollTop > 700 && document.documentElement.scrollTop < 750) {
             this.setState({ arrayCountShow: 15 });
             console.log(document.documentElement.scrollTop);
             console.log('15');
         } else {
 
         }
-        if (document.documentElement.scrollTop > 700) {
+        if (document.documentElement.scrollTop > 750 && document.documentElement.scrollTop < 800) {
             this.setState({ arrayCountShow: 18 });
             console.log(document.documentElement.scrollTop);
             console.log('18');
@@ -252,7 +258,7 @@ class DemoPage extends Component {
 
         return (
 
-                <div className="demoPage" onScroll={this._handleScroll} >
+                <div className="demoPage" onScroll={this.handleScroll} >
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                     <div className="category">
                         <Button basic color='orange' onClick={this.categoryAll}>all</Button>

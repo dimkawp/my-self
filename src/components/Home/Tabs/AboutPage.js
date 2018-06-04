@@ -1,149 +1,73 @@
 import React, { Component } from 'react';
+import { Grid, Form, Input, TextArea } from 'semantic-ui-react';
+import {Animated} from "react-animated-css";
 import './AboutPage.css';
-import InfiniteScroll from "react-infinite-scroll-component";
-import imgWork1_0 from '../../../assets/imgMyProjects/work1.0.png';
-import imgWork2_0 from '../../../assets/imgMyProjects/work2.0.png';
-import imgWork3_0 from '../../../assets/imgMyProjects/work3.0.png';
-import imgWork4_0 from '../../../assets/imgMyProjects/work4.0.png';
-import imgWork5_0 from '../../../assets/imgMyProjects/work5.0.png';
-import qwest from 'qwest';
-
-const style = {
-    height: 30,
-    border: "1px solid green",
-    margin: 6,
-    padding: 8
-};
 
 class AboutPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            items: [
-                { id: 1, title: 'YTC',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                    description:'about project info',
-                    category: ['css','ruby','angular'],
-                    img: imgWork1_0
-                },
-                { id: 2, title: 'Homework-13.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork2_0
-                },
-                { id: 3, title: 'Homework-14.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork3_0
-                },
-                { id: 4, title: 'Homework-1.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                    description:'about project info',
-                    category: ['css','jQuery'],
-                    img: imgWork4_0
-                },
-                { id: 5, title: 'Homework-2.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                    description:'about project info2',
-                    category: ['css','jQuery'],
-                    img: imgWork5_0
-                },
 
-            ],
         };
     }
-    fetchMoreData = () => {
-        // a fake async api call like which sends
-        // 20 more records in 1.5 secs
-        setTimeout(() => {
-            this.setState({
-                items: [
-                    { id: 1, title: 'YTC',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','ruby','angular'],
-                        img: imgWork1_0
-                    },
-                    { id: 2, title: 'Homework-13.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','react','jQuery'],
-                        img: imgWork2_0
-                    },
-                    { id: 3, title: 'Homework-14.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','react','jQuery'],
-                        img: imgWork3_0
-                    },
-                    { id: 4, title: 'Homework-1.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','jQuery'],
-                        img: imgWork4_0
-                    },
-                    { id: 5, title: 'Homework-2.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info2',
-                        category: ['css','jQuery'],
-                        img: imgWork5_0
-                    },
-                    { id: 6, title: 'YTC',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','ruby','angular'],
-                        img: imgWork1_0
-                    },
-                    { id: 7, title: 'Homework-13.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','react','jQuery'],
-                        img: imgWork2_0
-                    },
-                    { id: 8, title: 'Homework-14.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','react','jQuery'],
-                        img: imgWork3_0
-                    },
-                    { id: 9, title: 'Homework-1.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info',
-                        category: ['css','jQuery'],
-                        img: imgWork4_0
-                    },
-                    { id: 10, title: 'Homework-2.0',
-                        links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                        description:'about project info2',
-                        category: ['css','jQuery'],
-                        img: imgWork5_0
-                    },
-
-
-                ],
-            });
-        }, 1500);
-    };
-
+    componentWillMount() {
+    }
 
     render() {
         return (
             <div className="AboutPage">
-                <InfiniteScroll
-                    dataLength={this.state.items.length}
-                    next={this.fetchMoreData}
-                    hasMore={true}
-                    loader={<h4>Loading...</h4>}
-                >
-                    {this.state.items.map((i, index) => (
-                        <div style={style} key={index}>
-                            div - #{i.title}
+                <div className="HeaderAboutBlock">
+                    <Grid centered>
+                        <div className="MainContainer">
+                            <div className="FirstContainer share">
+                                <h1>
+                                    <span id="one">W</span><span>h</span><span>e</span><span>n</span> <span>W</span><span>e</span> <span>T</span><span>a</span><span>l</span><span>k</span>
+                                </h1>
+                            </div>
+                            <div className="SecondContainer share">
+                                <h1>
+                                    <span>W</span><span>e</span> <span>M</span><span>o</span><span>v</span><span>e</span>
+                                </h1>
+
+                            </div>
                         </div>
-                    ))}
-                </InfiniteScroll>
+                    </Grid>
+
+                </div>
+                <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                    <div className="SocialBlock">
+                        <Grid centered>
+                            <div className="item">f</div>
+                            <div className="item">y</div>
+                            <div className="item">g</div>
+                        </Grid>
+                    </div>
+                </Animated>
+                <Animated animationIn="bounceInRight" animationOut="fadeOut" animationInDelay={1500} isVisible={true}>
+                    <div className="TextInfoBlock">
+                        <Grid centered>
+                            <p>
+                                Where does it come from?
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+                            </p>
+                        </Grid>
+                    </div>
+                </Animated>
+                <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={2000} isVisible={true}>
+                    <div className="FormBlock">
+                        <Grid centered>
+                            <Form>
+                                <Form.Group widths='equal'>
+                                    <Form.Field control={Input} label='First name' placeholder='First name' />
+                                    <Form.Field control={Input} label='First name' placeholder='First name' />
+                                </Form.Group>
+                                <Form.Field control={TextArea} label='About' placeholder='Tell us more about you...' />
+                            </Form>
+                        </Grid>
+                    </div>
+                </Animated>
 
             </div>
         );

@@ -1,11 +1,13 @@
 /**/
 .visible.transition {
-  margin-top: auto !important;
+  width: 80%;
+  margin: 0 auto !important;
+  padding: 0;
   display: inline-block !important;
   position: relative;
   top: 20%;
-  left: 25%;
-  right: 25%;
+  left: 1%;
+  right: 0;
 }
 
 .modalBlock.visible.transition {
@@ -100,7 +102,29 @@
     }
   }
 }
+@media screen and (max-width: 1300px) {
+  .visible.transition {
+    width: 80%;
+    margin: 0 auto !important;
+    padding: 0;
+    display: inline-block !important;
+    position: relative;
+    top: 20%;
+    left: 1%;
+    right: 0;
+  }
+}
 @media screen and (max-width: 1000px) {
+  .visible.transition {
+    width: 80%;
+    margin: 0 auto !important;
+    padding: 0;
+    display: inline-block !important;
+    position: relative;
+    top: 20%;
+    left: 1%;
+    right: 0;
+  }
   .demoPage {
     .items {
       .item {
@@ -113,6 +137,15 @@
   }
 }
 @media screen and (max-width: 650px) {
+  .visible.transition {
+    margin: 0 auto !important;
+    padding: 0;
+    display: inline-block !important;
+    position: relative;
+    top: 20%;
+    left: 0;
+    right: 0;
+  }
   .demoPage {
     .items {
       .item {

@@ -23,15 +23,11 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-
         $(document).ready(function() {
             $('.contentTitle').hide();
             $('.contentDesc').hide();
             $('.welcomeBlock').hide();
         });
-
-
-
         $('.parallax').mouseover(function () {
             $('.welcomeBlock').show();
         });
@@ -114,7 +110,6 @@ class HomePage extends Component {
                     </div>
                 </div>
             </Animated>
-
         );
     }
 }
