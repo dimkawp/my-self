@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './DemoPage.css';
 import { Animated } from "react-animated-css";
-import { Button, Modal } from 'semantic-ui-react';
+import { Button, Modal, Header, Image, Embed } from 'semantic-ui-react';
 import imgWork1_0 from '../../../assets/imgMyProjects/work1.0.png';
 import imgWork2_0 from '../../../assets/imgMyProjects/work2.0.png';
 import imgWork3_0 from '../../../assets/imgMyProjects/work3.0.png';
@@ -14,122 +14,122 @@ class DemoPage extends Component {
         this.state = {
             array: [
                 { id: 1, title: 'YTC',
-                  links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                  description:'about project info',
+                  links: ['url-git', 'url-heroku', 'url-youtube'],
+                  description:'YTC is a project written in Ruby 2.4.0. The idea was to take a video from youtube and cut out an interesting piece from there and pour it onto your YouTube channel. What would later share in facebook.',
                   category: ['css','ruby','angular'],
                   img: imgWork1_0
                 },
                 { id: 2, title: 'Homework-13.0',
-                  links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
-                  description:'about project info',
+                  links: ['url-git', 'url-heroku', false],
+                  description:'ID 2 about project info',
                   category: ['css','react','jQuery'],
                   img: imgWork2_0
                 },
                 { id: 3, title: 'Homework-14.0',
-                  links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                  links: ['url-git', 'url-heroku', 'url-youtube'],
                   description:'about project info',
                   category: ['css','react','jQuery'],
                   img: imgWork3_0
                 },
                 { id: 4, title: 'Homework-1.0',
-                  links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                  links: ['url-git', 'url-heroku', 'url-youtube'],
                   description:'about project info',
                   category: ['css','jQuery'],
                   img: imgWork4_0
                 },
                 { id: 5, title: 'Homework-2.0',
-                  links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                  links: ['url-git', 'url-heroku', 'url-youtube'],
                   description:'about project info2',
                   category: ['css','jQuery'],
                   img: imgWork5_0
                 },
                 { id: 6, title: 'YTC',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','ruby','angular'],
                     img: imgWork1_0
                 },
                 { id: 7, title: 'Homework-13.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork2_0
                 },
                 { id: 8, title: 'Homework-14.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork3_0
                 },
                 { id: 9, title: 'Homework-1.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','jQuery'],
                     img: imgWork4_0
                 },
                 { id: 10, title: 'Homework-2.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info2',
                     category: ['css','jQuery'],
                     img: imgWork5_0
                 },
 
                 { id: 11, title: 'YTC',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','ruby','angular'],
                     img: imgWork1_0
                 },
                 { id: 12, title: 'Homework-13.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork2_0
                 },
                 { id: 13, title: 'Homework-14.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork3_0
                 },
                 { id: 14, title: 'Homework-1.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','jQuery'],
                     img: imgWork4_0
                 },
                 { id: 15, title: 'Homework-2.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info2',
                     category: ['css','jQuery'],
                     img: imgWork5_0
                 },
                 { id: 16, title: 'YTC',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','ruby','angular'],
                     img: imgWork1_0
                 },
                 { id: 17, title: 'Homework-13.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork2_0
                 },
                 { id: 18, title: 'Homework-14.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','react','jQuery'],
                     img: imgWork3_0
                 },
                 { id: 19, title: 'Homework-1.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info',
                     category: ['css','jQuery'],
                     img: imgWork4_0
                 },
                 { id: 20, title: 'Homework-2.0',
-                    links: [{git: 'url-git'},{heroku: 'url-heroku'},{youtube: 'url-youtube'}],
+                    links: ['url-git', 'url-heroku', 'url-youtube'],
                     description:'about project info2',
                     category: ['css','jQuery'],
                     img: imgWork5_0
@@ -255,9 +255,7 @@ class DemoPage extends Component {
         console.log(data);
     }
     render() {
-
         return (
-
                 <div className="demoPage" onScroll={this.handleScroll} >
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                     <div className="category">
@@ -288,14 +286,35 @@ class DemoPage extends Component {
                                             }
                                         </div>
                                         <div className="title">{item.title}</div>
-                                        <div className="description">{item.description}</div>
+                                        <div className="description">{item.description.substring(50, -1)}</div>
                                         <Modal
                                             trigger={<Button basic color='orange' className="triggerModal">Show</Button>}
                                             header={item.title}
-                                            content={item.description}
+                                            content={
+                                            <Modal.Content>
+                                                <Modal.Description>
+                                                    <Header>{item.title}</Header>
+                                                    <p>{item.description}</p>
+                                                    <div className="VideoBlock">
+                                                        {
+                                                            item.links[2] !== false &&
+                                                            <Embed id='_q6exCpCqKU' source='youtube' />
+                                                        }
+                                                    </div>
+                                                    <div className="LinksBlock">
+                                                        <a href={item.links[0]}>{item.links[0]}</a>
+                                                        <a href={item.links[1]}>{item.links[1]}</a>
+                                                        {
+                                                            item.links[2] !== false &&
+                                                            <a href={item.links[2]}>{item.links[2]}</a>
+                                                        }
+                                                    </div>
+                                                </Modal.Description>
+                                            </Modal.Content>
+                                            }
+
                                             actions={[
-                                                'Snooze',
-                                                { key: 'done', content: 'Done', positive: true },
+                                                { key: 'done', content: 'X', positive: true },
                                             ]}
                                         />
                                     </div>

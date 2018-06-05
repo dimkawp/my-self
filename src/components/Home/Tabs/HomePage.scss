@@ -123,6 +123,18 @@
         clip-path: polygon(50% 20%, 100% 0, 100% 100%, 50% 80%, 0 100%, 0 0);
       }
     }
-
+  }
+}
+@media screen and (max-width: 550px) {
+  .HomePage {
+    .contentTitle {
+      .items {
+        height: auto;
+        flex-direction: row;
+        .item {
+          padding: 10px;
+        }
+      }
+    }
   }
 }

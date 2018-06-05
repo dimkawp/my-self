@@ -1,4 +1,43 @@
 /**/
+/* clear basic modal */
+.ui.page.modals.dimmer.transition.visible.active {
+  overflow: scroll;
+  .ui.modal.transition.visible.active {
+    background-color: transparent;
+    .header {
+      color: #FD630B;
+      background-color: transparent;
+    }
+    .content {
+      color: #FD630B;
+      background-color: transparent;
+      .description {
+        .header {
+
+        }
+        .VideoBlock {
+
+        }
+        .LinksBlock {
+          display: flex;
+          flex-direction: row;
+          a {
+            color: #FD630B;
+            margin: 5px;
+          }
+        }
+      }
+    }
+    .actions {
+      color: #FD630B;
+      background-color: transparent;
+      button {
+        background-color: #FD630B;
+      }
+    }
+  }
+
+}
 .visible.transition {
   width: 80%;
   margin: 0 auto !important;
@@ -52,7 +91,6 @@
       flex-direction: column;
       align-items: center;
       cursor: pointer;
-
       img {
         z-index: -1;
         opacity: 0.3;
@@ -75,19 +113,26 @@
         }
       }
       .title {
+        font-size: 26px;
 
       }
       .description {
+        font-size: 18px;
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
         height: 55%;
+        width: 80%;
+      }
+      .ui.orange.basic.button.triggerModal {
+        color: white!important;
       }
       .triggerModal {
+        border: solid 1px white;
+
         margin: 10px 5px;
         display: flex;
         align-self: flex-end;
-      }
-      .triggerModal:hover {
-        color: white!important;
-        border: white;
       }
     }
     .item:hover {
