@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { Grid, Form, Input, TextArea } from 'semantic-ui-react';
 import {Animated} from "react-animated-css";
 import './AboutPage.css';
+//icons
+import IconGitHub from 'react-icons/lib/fa/git-square';
+import IconYouTube from 'react-icons/lib/fa/youtube';
+import IconFaceBook from 'react-icons/lib/fa/facebook-square';
 
 class AboutPage extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
 
         };
@@ -29,18 +32,16 @@ class AboutPage extends Component {
                                 <h1>
                                     <span>W</span><span>e</span> <span>M</span><span>o</span><span>v</span><span>e</span>
                                 </h1>
-
                             </div>
                         </div>
                     </Grid>
-
                 </div>
                 <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
                     <div className="SocialBlock">
                         <Grid centered>
-                            <div className="item">f</div>
-                            <div className="item">y</div>
-                            <div className="item">g</div>
+                            <div className="item"><IconFaceBook size={20}/></div>
+                            <div className="item"><IconYouTube size={20}/></div>
+                            <div className="item"><IconGitHub size={20}/></div>
                         </Grid>
                     </div>
                 </Animated>
@@ -68,7 +69,6 @@ class AboutPage extends Component {
                         </Grid>
                     </div>
                 </Animated>
-
             </div>
         );
     }

@@ -1,6 +1,7 @@
 /*Home*/
 @import url('https://fonts.googleapis.com/css?family=Cormorant+Unicase:300,400,500,600,700');
 .home {
+  font-family: 'Cormorant Unicase', serif;
   min-height: 1700px;
   background-color: black;
   .menuIcon {
@@ -29,14 +30,12 @@
         height: 100px;
         font-size: 36px;
         cursor: pointer;
-
       }
     }
   }
   .menuIcon:hover {
     color: #FD630B;
   }
-
   #myVideo {
     position: fixed;
     opacity: .1;
@@ -47,9 +46,6 @@
   }
   .test-block {
     color: white;
-  }
-   .menu {
-
   }
   .ui.secondary.pointing.menu {
     display: flex;
@@ -77,13 +73,11 @@
     color: white;
     border: none;
     background: transparent;
-
   }
   .ui.segment.active.tab.homeTab {
     margin: 0;
     padding: 0;
   }
-
 }
 @media screen and (max-width: 1000px) {
   .home {
@@ -102,16 +96,7 @@
         font-size: 14px;
         color: white;
         margin: 1px;
-
       }
     }
-  }
-
-  .menuIcon {
-
-
-  }
-  .menuBlock {
-
   }
 }

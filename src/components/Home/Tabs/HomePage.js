@@ -57,7 +57,6 @@ class HomePage extends Component {
                 $('.contentTitle').fadeOut("slow");
             }
         });
-
     }
 
     render() {
@@ -88,9 +87,9 @@ class HomePage extends Component {
                     </Parallax>
                     <div className="contentTitle">
                         <div id="secondMenu" className="items">
-                            <div className="item"><IconRepeat size={50} /></div>
-                            <div className="item"><IconGithub size={50} /></div>
-                            <div className="item"><IconWindows size={50} /></div>
+                            <div className="item"><IconRepeat size={50}/></div>
+                            <div className="item"><IconGithub size={50}/></div>
+                            <div className="item"><IconWindows size={50}/></div>
                         </div>
                     </div>
                     <div className="contentDesc">

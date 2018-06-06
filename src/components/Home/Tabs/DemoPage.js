@@ -1,138 +1,52 @@
 import React, { Component } from 'react';
 import './DemoPage.css';
 import { Animated } from "react-animated-css";
-import { Button, Modal, Header, Image, Embed } from 'semantic-ui-react';
+import { Button, Modal, Header, Embed } from 'semantic-ui-react';
 import imgWork1_0 from '../../../assets/imgMyProjects/work1.0.png';
+import imgWork1_1 from '../../../assets/imgMyProjects/work1.1.png';
+import imgWork1_2 from '../../../assets/imgMyProjects/work1.2.png';
+import imgWork1_3 from '../../../assets/imgMyProjects/work1.3.png';
 import imgWork2_0 from '../../../assets/imgMyProjects/work2.0.png';
+import imgWork2_1 from '../../../assets/imgMyProjects/work2.1.png';
+import imgWork2_2 from '../../../assets/imgMyProjects/work2.2.png';
+import imgWork2_3 from '../../../assets/imgMyProjects/work2.3.png';
 import imgWork3_0 from '../../../assets/imgMyProjects/work3.0.png';
 import imgWork4_0 from '../../../assets/imgMyProjects/work4.0.png';
 import imgWork5_0 from '../../../assets/imgMyProjects/work5.0.png';
+//bootsrapt components
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+//icons
+import IconGitHub from 'react-icons/lib/go/logo-github';
+import IconYouTube from 'react-icons/lib/io/social-youtube';
+import IconHeroku from 'react-icons/lib/go/arrow-right';
 
 class DemoPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            activeIndex: 0,
             array: [
-                { id: 1, title: 'YTC',
-                  links: ['url-git', 'url-heroku', 'url-youtube'],
-                  description:'YTC is a project written in Ruby 2.4.0. The idea was to take a video from youtube and cut out an interesting piece from there and pour it onto your YouTube channel. What would later share in facebook.',
-                  category: ['css','ruby','angular'],
-                  img: imgWork1_0
+                { id: 1, title: 'AION', prevTitle: 'Default layout html,css not adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-2.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-2.0/home.html', false],
+                    description:'Default layout use only css html. Not adaptive fore mobile, have default size.',
+                    category: ['css'],
+                    img: imgWork1_0,
+                    demoImg: [imgWork1_0,imgWork1_1,imgWork1_2,imgWork1_3]
                 },
-                { id: 2, title: 'Homework-13.0',
-                  links: ['url-git', 'url-heroku', false],
-                  description:'ID 2 about project info',
-                  category: ['css','react','jQuery'],
-                  img: imgWork2_0
+                { id: 2, title: 'AION', prevTitle: 'Default layout html,css not adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-2.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-2.0/home.html', false],
+                    description:'Default layout use only css html. Not adaptive fore mobile, have default size.',
+                    category: ['css'],
+                    img: imgWork2_0,
+                    demoImg: [imgWork2_0,imgWork2_1,imgWork2_2,imgWork2_3]
                 },
-                { id: 3, title: 'Homework-14.0',
-                  links: ['url-git', 'url-heroku', 'url-youtube'],
-                  description:'about project info',
-                  category: ['css','react','jQuery'],
-                  img: imgWork3_0
-                },
-                { id: 4, title: 'Homework-1.0',
-                  links: ['url-git', 'url-heroku', 'url-youtube'],
-                  description:'about project info',
-                  category: ['css','jQuery'],
-                  img: imgWork4_0
-                },
-                { id: 5, title: 'Homework-2.0',
-                  links: ['url-git', 'url-heroku', 'url-youtube'],
-                  description:'about project info2',
-                  category: ['css','jQuery'],
-                  img: imgWork5_0
-                },
-                { id: 6, title: 'YTC',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
+                { id: 3, title: 'YTC', prevTitle: 'The project of learning ruby 2.4.0.',
+                    links: ['https://github.com/dimkawp/YTC', 'https://ytcproject.herokuapp.com/', '_q6exCpCqKU'],
+                    description:'The main goal was to create a resource for fast processing of video from YouTube.\n' +
+                    'The process is as follows. On this link our API downloads the video from the YouTube, then for processing (in our case, cutting out the piece), there is loading on the Api Cloudinary. After processing, a download is made to the channel, access to which was obtained at login.\n',
                     category: ['css','ruby','angular'],
-                    img: imgWork1_0
-                },
-                { id: 7, title: 'Homework-13.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork2_0
-                },
-                { id: 8, title: 'Homework-14.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork3_0
-                },
-                { id: 9, title: 'Homework-1.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','jQuery'],
-                    img: imgWork4_0
-                },
-                { id: 10, title: 'Homework-2.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info2',
-                    category: ['css','jQuery'],
-                    img: imgWork5_0
-                },
-
-                { id: 11, title: 'YTC',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','ruby','angular'],
-                    img: imgWork1_0
-                },
-                { id: 12, title: 'Homework-13.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork2_0
-                },
-                { id: 13, title: 'Homework-14.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork3_0
-                },
-                { id: 14, title: 'Homework-1.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','jQuery'],
-                    img: imgWork4_0
-                },
-                { id: 15, title: 'Homework-2.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info2',
-                    category: ['css','jQuery'],
-                    img: imgWork5_0
-                },
-                { id: 16, title: 'YTC',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','ruby','angular'],
-                    img: imgWork1_0
-                },
-                { id: 17, title: 'Homework-13.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork2_0
-                },
-                { id: 18, title: 'Homework-14.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','react','jQuery'],
-                    img: imgWork3_0
-                },
-                { id: 19, title: 'Homework-1.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info',
-                    category: ['css','jQuery'],
-                    img: imgWork4_0
-                },
-                { id: 20, title: 'Homework-2.0',
-                    links: ['url-git', 'url-heroku', 'url-youtube'],
-                    description:'about project info2',
-                    category: ['css','jQuery'],
-                    img: imgWork5_0
+                    img: imgWork1_0,
+                    demoImg: [imgWork1_0,imgWork1_1,imgWork1_2,imgWork1_3]
                 },
 
             ],
@@ -141,17 +55,44 @@ class DemoPage extends Component {
             arrayCountShow: 9
 
         }
+        this.next = this.next.bind(this);
+        this.previous = this.previous.bind(this);
+        this.goToIndex = this.goToIndex.bind(this);
+        this.onExiting = this.onExiting.bind(this);
+        this.onExited = this.onExited.bind(this);
     }
     componentWillMount(){
         this.state.workArray = this.state.array;
         window.onscroll = () => this.handleScroll();
-
     }
+    //CAROSEL
+    onExiting() {
+        this.animating = true;
+    }
+
+    onExited() {
+        this.animating = false;
+    }
+
+    next() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === 5 - 1 ? 0 : this.state.activeIndex + 1;
+        this.setState({ activeIndex: nextIndex });
+    }
+
+    previous() {
+        if (this.animating) return;
+        const nextIndex = this.state.activeIndex === 0 ? 5 - 1 : this.state.activeIndex - 1;
+        this.setState({ activeIndex: nextIndex });
+    }
+
+    goToIndex(newIndex) {
+        if (this.animating) return;
+        this.setState({ activeIndex: newIndex });
+    }
+
 
     //BUTTON ADD Project
-    addProjectEvent = () => {
-        console.log('add');
-    }
     handleScroll = () => {
         if (document.documentElement.scrollTop > 500 && document.documentElement.scrollTop < 600) {
             //setTimeout(() => {},500);
@@ -183,17 +124,19 @@ class DemoPage extends Component {
 
         }
     }
+
     categoryAll = () => {
         let data = this.state.array.filter(function(item){
             return item;
-        }).map(function({id, title, links, description, category, img}){
-            return {id, title, links, description, category, img};
+        }).map(function({id, title, prevTitle, links, description, category, img, demoImg}){
+            return {id, title, prevTitle, links, description, category, img, demoImg};
         });
         this.setState({
             workArray: data
         });
         console.log(data);
     }
+
     categoryRuby = () => {
         let data = this.state.array.filter(function(item){
             var found = item.category.find(function(element) {
@@ -206,6 +149,7 @@ class DemoPage extends Component {
         });
         console.log(data);
     }
+
     categoryCss = () => {
         let data = this.state.array.filter(function(item){
             var found = item.category.find(function(element) {
@@ -218,6 +162,7 @@ class DemoPage extends Component {
         });
         console.log(data);
     }
+
     categoryAngular = () => {
         let data = this.state.array.filter(function(item){
             var found = item.category.find(function(element) {
@@ -230,6 +175,7 @@ class DemoPage extends Component {
         });
         console.log(data);
     }
+
     categoryReact = () => {
         let data = this.state.array.filter(function(item){
             var found = item.category.find(function(element) {
@@ -242,6 +188,7 @@ class DemoPage extends Component {
         });
         console.log(data);
     }
+
     categoryjQuery = () => {
         let data = this.state.array.filter(function(item){
             var found = item.category.find(function(element) {
@@ -254,17 +201,19 @@ class DemoPage extends Component {
         });
         console.log(data);
     }
+
     render() {
+        const { activeIndex } = this.state;
         return (
-                <div className="demoPage" onScroll={this.handleScroll} >
+                <div className="demoPage" onScroll={this.handleScroll}>
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
-                    <div className="category">
-                        <Button basic color='orange' onClick={this.categoryAll}>all</Button>
-                        <Button basic color='orange' onClick={this.categoryRuby}>Ruby</Button>
-                        <Button basic color='orange' onClick={this.categoryCss}>Css</Button>
-                        <Button basic color='orange' onClick={this.categoryAngular}>Angular</Button>
-                        <Button basic color='orange' onClick={this.categoryReact}>React</Button>
-                        <Button basic color='orange' onClick={this.categoryjQuery}>jQuery</Button>
+                    <div className="categoryButtons">
+                        <button onClick={this.categoryAll}>all</button>
+                        <button onClick={this.categoryRuby}>Ruby</button>
+                        <button onClick={this.categoryCss}>Css</button>
+                        <button onClick={this.categoryAngular}>Angular</button>
+                        <button onClick={this.categoryReact}>React</button>
+                        <button onClick={this.categoryjQuery}>jQuery</button>
                     </div>
                     </Animated>
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
@@ -286,31 +235,74 @@ class DemoPage extends Component {
                                             }
                                         </div>
                                         <div className="title">{item.title}</div>
-                                        <div className="description">{item.description.substring(50, -1)}</div>
+                                        <div className="description">{item.prevTitle}</div>
                                         <Modal
                                             trigger={<Button basic color='orange' className="triggerModal">Show</Button>}
                                             header={item.title}
                                             content={
-                                            <Modal.Content>
-                                                <Modal.Description>
-                                                    <Header>{item.title}</Header>
-                                                    <p>{item.description}</p>
-                                                    <div className="VideoBlock">
-                                                        {
-                                                            item.links[2] !== false &&
-                                                            <Embed id='_q6exCpCqKU' source='youtube' />
-                                                        }
-                                                    </div>
-                                                    <div className="LinksBlock">
-                                                        <a href={item.links[0]}>{item.links[0]}</a>
-                                                        <a href={item.links[1]}>{item.links[1]}</a>
-                                                        {
-                                                            item.links[2] !== false &&
-                                                            <a href={item.links[2]}>{item.links[2]}</a>
-                                                        }
-                                                    </div>
-                                                </Modal.Description>
-                                            </Modal.Content>
+                                                    <Modal.Content>
+                                                        <Modal.Description>
+                                                            <Animated animationIn="bounceInDown" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
+                                                            <Header>About Project</Header>
+                                                            <p>{item.description}</p>
+                                                            </Animated>
+                                                            <Animated animationIn="bounceInRight" animationOut="fadeOut" animationInDelay={750} isVisible={true}>
+                                                            <div className="VideoBlock">
+                                                                {
+                                                                    item.links[2] !== false &&
+                                                                    <Embed id='_q6exCpCqKU' source='youtube' />
+                                                                }
+                                                            </div>
+                                                            </Animated>
+                                                            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                                                            <div className="LinksBlock">
+                                                                {
+                                                                    item.links[2] !== false &&
+                                                                    <a href={"https://www.youtube.com/watch?v="+item.links[2]} target="_blank">
+                                                                        <IconYouTube size={30}/>
+                                                                    </a>
+                                                                }
+                                                                {
+                                                                    item.links[0] !== false &&
+                                                                    <a href={item.links[0]} target="_blank">
+                                                                        <IconGitHub size={30}/>
+                                                                    </a>
+                                                                }
+                                                                {
+                                                                    item.links[1] !== false &&
+                                                                    <a href={item.links[1]} target="_blank">
+                                                                        <IconHeroku size={30}/>
+                                                                    </a>
+                                                                }
+                                                            </div>
+                                                                <div>
+
+                                                                    <Carousel
+                                                                        activeIndex={activeIndex}
+                                                                        next={this.next}
+                                                                        previous={this.previous}
+                                                                    >
+                                                                        <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                                                                        {
+                                                                            item.demoImg.map((img) => {
+                                                                                return (
+                                                                                    <CarouselItem
+                                                                                        key="item-key"
+                                                                                        onExiting={this.onExiting}
+                                                                                        onExited={this.onExited}
+                                                                                    >
+                                                                                        <img src={img} alt="slider img" style={{width: '100%'}}/>
+                                                                                    </CarouselItem>
+                                                                                );
+                                                                            })
+                                                                        }
+                                                                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                                                                        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                                                                    </Carousel>
+                                                                </div>
+                                                            </Animated>
+                                                        </Modal.Description>
+                                                    </Modal.Content>
                                             }
 
                                             actions={[

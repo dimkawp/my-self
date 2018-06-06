@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Tab, Button } from 'semantic-ui-react';
+import { Tab } from 'semantic-ui-react';
 import './Home.css';
 import HomePage from './Tabs/HomePage';
 import DemoPage from './Tabs/DemoPage';
@@ -41,19 +41,6 @@ class Home extends Component {
         $(".menuIcon").click(function(){
             $(".menuBlock").toggle("slow");
         });
-
-    }
-    clickHome = () => {
-        this.setState({
-            HomeClick: !this.state.HomeClick
-        });
-    }
-
-    AnimateClick = () => {
-        this.setState({
-            Animate: !this.state.Animate
-        });
-        console.log(this.state.Animate);
 
     }
 

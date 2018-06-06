@@ -53,6 +53,7 @@ $background: #39393B;
   .SocialBlock {
     .grid {
       .item {
+        cursor: pointer;
         height: 50px;
         width: 50px;
         background-color: #FD630B;
@@ -63,8 +64,14 @@ $background: #39393B;
         text-align: center;
         margin: 10px;
       }
+      .item:hover {
+        transition: .4s ease-in-out;
+        background-color: white;
+        svg {
+          color: #FD630B;
+        }
+      }
     }
-
   }
   .TextInfoBlock {
     p {

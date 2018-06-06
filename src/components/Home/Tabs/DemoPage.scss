@@ -1,11 +1,15 @@
 /**/
 /* clear basic modal */
 .ui.page.modals.dimmer.transition.visible.active {
+  font-family: 'Cormorant Unicase', serif;
   overflow: scroll;
   .ui.modal.transition.visible.active {
     background-color: transparent;
     .header {
       color: #FD630B;
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 30px;
+      text-align: center;
       background-color: transparent;
     }
     .content {
@@ -13,10 +17,14 @@
       background-color: transparent;
       .description {
         .header {
-
+          font-family: 'Cormorant Unicase', serif;
+          font-size: 22px;
+          text-align: center;
         }
-        .VideoBlock {
-
+        p {
+          color: white;
+          text-align: justify;
+          font-size: 22px;
         }
         .LinksBlock {
           display: flex;
@@ -24,6 +32,10 @@
           a {
             color: #FD630B;
             margin: 5px;
+          }
+          a:hover {
+            transition: .4s ease-out;
+            color: white;
           }
         }
       }
@@ -34,9 +46,13 @@
       button {
         background-color: #FD630B;
       }
+      button:hover {
+        transition: .4s ease-out;
+        background-color: white;
+        color: darkred;
+      }
     }
   }
-
 }
 .visible.transition {
   width: 80%;
@@ -48,7 +64,6 @@
   left: 1%;
   right: 0;
 }
-
 .modalBlock.visible.transition {
   display: flex;
   justify-content: center;
@@ -69,13 +84,24 @@
       display: flex;
     }
   }
-
 }
-
 .demoPage {
   background: transparent;
-  .category {
-
+  .categoryButtons {
+    button {
+      cursor: pointer;
+      color: #FD630B;
+      border: 1px solid #FD630B;
+      border-radius: 5px 5px 5px 5px;
+      padding: 10px 20px;
+      margin: 5px;
+      background: transparent;
+    }
+    button:hover {
+      transition: .4s ease-in-out;
+      color: white;
+      border-color: white;
+    }
   }
   .items {
     display: flex;
@@ -100,16 +126,13 @@
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
       }
-
       .category {
         width: 100%;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-
         .list {
           margin: 10px 5px;
-
         }
       }
       .title {
