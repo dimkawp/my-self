@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import uniqueId from 'lodash/uniqueId';
 import './DemoPage.css';
 import { Animated } from "react-animated-css";
 import { Button, Modal, Header, Embed } from 'semantic-ui-react';
+//demo img
 import imgWork1_0 from '../../../assets/imgMyProjects/work1.0.png';
 import imgWork1_1 from '../../../assets/imgMyProjects/work1.1.png';
 import imgWork1_2 from '../../../assets/imgMyProjects/work1.2.png';
@@ -11,8 +13,21 @@ import imgWork2_1 from '../../../assets/imgMyProjects/work2.1.png';
 import imgWork2_2 from '../../../assets/imgMyProjects/work2.2.png';
 import imgWork2_3 from '../../../assets/imgMyProjects/work2.3.png';
 import imgWork3_0 from '../../../assets/imgMyProjects/work3.0.png';
+import imgWork3_1 from '../../../assets/imgMyProjects/work3.1.png';
+import imgWork3_2 from '../../../assets/imgMyProjects/work3.2.png';
+import imgWork3_3 from '../../../assets/imgMyProjects/work3.3.png';
 import imgWork4_0 from '../../../assets/imgMyProjects/work4.0.png';
+import imgWork4_1 from '../../../assets/imgMyProjects/work4.1.png';
+import imgWork4_2 from '../../../assets/imgMyProjects/work4.2.png';
+import imgWork4_3 from '../../../assets/imgMyProjects/work4.3.png';
 import imgWork5_0 from '../../../assets/imgMyProjects/work5.0.png';
+import imgWork5_1 from '../../../assets/imgMyProjects/work5.1.png';
+import imgWork5_2 from '../../../assets/imgMyProjects/work5.2.png';
+import imgWork5_3 from '../../../assets/imgMyProjects/work5.3.png';
+import imgWork5_4 from '../../../assets/imgMyProjects/work5.4.png';
+import imgWork5_5 from '../../../assets/imgMyProjects/work5.4.png';
+import imgWork5_6 from '../../../assets/imgMyProjects/work5.4.png';
+import imgWork5_7 from '../../../assets/imgMyProjects/work5.4.png';
 //bootsrapt components
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 //icons
@@ -33,14 +48,35 @@ class DemoPage extends Component {
                     img: imgWork1_0,
                     demoImg: [imgWork1_0,imgWork1_1,imgWork1_2,imgWork1_3]
                 },
-                { id: 2, title: 'AION', prevTitle: 'Default layout html,css not adaptive.',
-                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-2.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-2.0/home.html', false],
+                { id: 2, title: 'TAJAM', prevTitle: 'Default layout html,css not adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-5.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-5.0/home.html', false],
                     description:'Default layout use only css html. Not adaptive fore mobile, have default size.',
                     category: ['css'],
                     img: imgWork2_0,
                     demoImg: [imgWork2_0,imgWork2_1,imgWork2_2,imgWork2_3]
                 },
-                { id: 3, title: 'YTC', prevTitle: 'The project of learning ruby 2.4.0.',
+                { id: 3, title: 'AMBER', prevTitle: 'Middle level layout html,css with adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-7.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-7.0/home.html', false],
+                    description:'Middle level layout use only css html. Adaptive fore mobile.',
+                    category: ['css'],
+                    img: imgWork3_0,
+                    demoImg: [imgWork3_0,imgWork3_1,imgWork3_2,imgWork3_3]
+                },
+                { id: 4, title: 'WITHE', prevTitle: 'Middle level layout html,css with adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-9.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-9.0/home.html', false],
+                    description:'Middle level layout use css html and js. Adaptive fore mobile. And used js and JQ fore, Mobile Nav, Nav anchor, nav scroll and slider with change screen, change slider size.',
+                    category: ['css'],
+                    img: imgWork4_0,
+                    demoImg: [imgWork4_0,imgWork4_1,imgWork4_2,imgWork4_3]
+                },
+                { id: 5, title: 'ONSULT PULS', prevTitle: 'Middle level layout html,css,jQuery with adaptive.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/blob/master/tasks/homework-11.0/home.html', 'https://geekhub-frontend-js.herokuapp.com/tasks/homework-11.0/home.html', false],
+                    description:'Middle level layout use css html js jQuery. Adaptive fore mobile. Have more page, more sliders, changes bg when scroll. Used node modules, gulp,sass. Build all mini js css html.',
+                    category: ['css','jQuery'],
+                    img: imgWork5_0,
+                    demoImg: [imgWork5_0,imgWork5_1,imgWork5_2,imgWork5_3,imgWork5_4,imgWork5_5,imgWork5_6,imgWork5_7]
+                },
+                { id: 6, title: 'YTC', prevTitle: 'The project of learning ruby 2.4.0.',
                     links: ['https://github.com/dimkawp/YTC', 'https://ytcproject.herokuapp.com/', '_q6exCpCqKU'],
                     description:'The main goal was to create a resource for fast processing of video from YouTube.\n' +
                     'The process is as follows. On this link our API downloads the video from the YouTube, then for processing (in our case, cutting out the piece), there is loading on the Api Cloudinary. After processing, a download is made to the channel, access to which was obtained at login.\n',
@@ -76,13 +112,13 @@ class DemoPage extends Component {
 
     next() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 5 - 1 ? 0 : this.state.activeIndex + 1;
+        const nextIndex = this.state.activeIndex === 3 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
         if (this.animating) return;
-        const nextIndex = this.state.activeIndex === 0 ? 5 - 1 : this.state.activeIndex - 1;
+        const nextIndex = this.state.activeIndex === 0 ? 3 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
@@ -284,14 +320,14 @@ class DemoPage extends Component {
                                                                     >
                                                                         <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                                                                         {
-                                                                            item.demoImg.map((img) => {
+                                                                            item.demoImg.map((img, key) => {
                                                                                 return (
                                                                                     <CarouselItem
-                                                                                        key="item-key"
+                                                                                        key={uniqueId()}
                                                                                         onExiting={this.onExiting}
                                                                                         onExited={this.onExited}
                                                                                     >
-                                                                                        <img src={img} alt="slider img" style={{width: '100%'}}/>
+                                                                                        <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%',height: '450px'}}/>
                                                                                     </CarouselItem>
                                                                                 );
                                                                             })
