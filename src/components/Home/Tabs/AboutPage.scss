@@ -63,6 +63,9 @@ $background: #39393B;
         align-items: center;
         text-align: center;
         margin: 10px;
+        a {
+          color: white;
+        }
       }
       .item:hover {
         transition: .4s ease-in-out;

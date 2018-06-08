@@ -38,6 +38,29 @@
             color: white;
           }
         }
+        .carousel.slide {
+          margin: 50px 0;
+          .carousel-item {
+            img {
+              border-radius: 10px 10px;
+            }
+          }
+          .carousel-indicators {
+            li {
+              background-color: #FD630B;
+            }
+            li.active {
+              background-color: red;
+            }
+          }
+          .carousel-control-prev, .carousel-control-next {
+            .carousel-control-next-icon, .carousel-control-prev-icon {
+              cursor: pointer;
+              background-color: #FD630B;
+              border-radius: 10%;
+            }
+          }
+        }
       }
     }
     .actions {

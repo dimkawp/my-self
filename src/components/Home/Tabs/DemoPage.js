@@ -28,6 +28,15 @@ import imgWork5_4 from '../../../assets/imgMyProjects/work5.4.png';
 import imgWork5_5 from '../../../assets/imgMyProjects/work5.4.png';
 import imgWork5_6 from '../../../assets/imgMyProjects/work5.4.png';
 import imgWork5_7 from '../../../assets/imgMyProjects/work5.4.png';
+import imgWork6_0 from '../../../assets/imgMyProjects/work6.0.png';
+import imgWork6_1 from '../../../assets/imgMyProjects/work6.1.png';
+import imgWork6_2 from '../../../assets/imgMyProjects/work6.2.png';
+import imgWork6_3 from '../../../assets/imgMyProjects/work6.3.png';
+import imgWork6_4 from '../../../assets/imgMyProjects/work6.4.png';
+import imgWork7_0 from '../../../assets/imgMyProjects/work7.0.png';
+import imgWork7_1 from '../../../assets/imgMyProjects/work7.1.png';
+import imgWork7_2 from '../../../assets/imgMyProjects/work7.2.png';
+import imgWork7_3 from '../../../assets/imgMyProjects/work7.3.png';
 //bootsrapt components
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
 //icons
@@ -76,7 +85,21 @@ class DemoPage extends Component {
                     img: imgWork5_0,
                     demoImg: [imgWork5_0,imgWork5_1,imgWork5_2,imgWork5_3,imgWork5_4,imgWork5_5,imgWork5_6,imgWork5_7]
                 },
-                { id: 6, title: 'YTC', prevTitle: 'The project of learning ruby 2.4.0.',
+                { id: 6, title: 'MERKURY', prevTitle: 'Full work on React.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/tree/master/tasks/homework-13.0/homework', 'https://gh-homework-13.herokuapp.com', false],
+                    description:'This full work on React, with routs. Have api login local storage. Have more graphics charsets and sortable box. React-big-calendar. use JQ fore dropbox and search box. Adaptive fore small screen and mobile.',
+                    category: ['css','jQuery','react'],
+                    img: imgWork6_0,
+                    demoImg: [imgWork6_0,imgWork6_1,imgWork6_2,imgWork6_3,imgWork6_4]
+                },
+                { id: 7, title: 'VIRTUS', prevTitle: 'Full work on React.',
+                    links: ['https://github.com/dimkawp/geekhub-frontend-js/tree/master/tasks/homework-14.0/homework', 'https://gh-homework-14.herokuapp.com', false],
+                    description:'This full work on React, with routs. Login local storage. Have more graphics charsets and sortable box. React-bootstrap-table-next. Use Redux. Adaptive fore small screen and mobile.',
+                    category: ['css','jQuery','react'],
+                    img: imgWork7_0,
+                    demoImg: [imgWork7_0,imgWork7_1,imgWork7_2,imgWork7_3]
+                },
+                { id: 8, title: 'YTC', prevTitle: 'The project of learning ruby 2.4.0.',
                     links: ['https://github.com/dimkawp/YTC', 'https://ytcproject.herokuapp.com/', '_q6exCpCqKU'],
                     description:'The main goal was to create a resource for fast processing of video from YouTube.\n' +
                     'The process is as follows. On this link our API downloads the video from the YouTube, then for processing (in our case, cutting out the piece), there is loading on the Api Cloudinary. After processing, a download is made to the channel, access to which was obtained at login.\n',
@@ -91,38 +114,32 @@ class DemoPage extends Component {
             arrayCountShow: 9
 
         }
-        this.next = this.next.bind(this);
-        this.previous = this.previous.bind(this);
-        this.goToIndex = this.goToIndex.bind(this);
-        this.onExiting = this.onExiting.bind(this);
-        this.onExited = this.onExited.bind(this);
     }
     componentWillMount(){
         this.state.workArray = this.state.array;
         window.onscroll = () => this.handleScroll();
     }
-    //CAROSEL
-    onExiting() {
+    //Carousel
+    onExiting = () => {
         this.animating = true;
     }
-
-    onExited() {
+    onExited = () => {
         this.animating = false;
     }
 
-    next() {
+    next = () => {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === 3 ? 0 : this.state.activeIndex + 1;
         this.setState({ activeIndex: nextIndex });
     }
 
-    previous() {
+    previous = () => {
         if (this.animating) return;
         const nextIndex = this.state.activeIndex === 0 ? 3 : this.state.activeIndex - 1;
         this.setState({ activeIndex: nextIndex });
     }
 
-    goToIndex(newIndex) {
+    goToIndex = (newIndex) => {
         if (this.animating) return;
         this.setState({ activeIndex: newIndex });
     }
@@ -291,6 +308,28 @@ class DemoPage extends Component {
                                                             </div>
                                                             </Animated>
                                                             <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                                                            <Carousel
+                                                                activeIndex={activeIndex}
+                                                                next={this.next}
+                                                                previous={this.previous}
+                                                            >
+                                                                <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                                                                {
+                                                                    item.demoImg.map((img, key) => {
+                                                                        return (
+                                                                            <CarouselItem
+                                                                                key={uniqueId()}
+                                                                                onExiting={this.onExiting}
+                                                                                onExited={this.onExited}
+                                                                            >
+                                                                                <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%',height: '450px'}}/>
+                                                                            </CarouselItem>
+                                                                        );
+                                                                    })
+                                                                }
+                                                                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                                                                <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                                                            </Carousel>
                                                             <div className="LinksBlock">
                                                                 {
                                                                     item.links[2] !== false &&
@@ -311,36 +350,10 @@ class DemoPage extends Component {
                                                                     </a>
                                                                 }
                                                             </div>
-                                                                <div>
-
-                                                                    <Carousel
-                                                                        activeIndex={activeIndex}
-                                                                        next={this.next}
-                                                                        previous={this.previous}
-                                                                    >
-                                                                        <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-                                                                        {
-                                                                            item.demoImg.map((img, key) => {
-                                                                                return (
-                                                                                    <CarouselItem
-                                                                                        key={uniqueId()}
-                                                                                        onExiting={this.onExiting}
-                                                                                        onExited={this.onExited}
-                                                                                    >
-                                                                                        <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%',height: '450px'}}/>
-                                                                                    </CarouselItem>
-                                                                                );
-                                                                            })
-                                                                        }
-                                                                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                                                                        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-                                                                    </Carousel>
-                                                                </div>
                                                             </Animated>
                                                         </Modal.Description>
                                                     </Modal.Content>
                                             }
-
                                             actions={[
                                                 { key: 'done', content: 'X', positive: true },
                                             ]}
@@ -352,7 +365,6 @@ class DemoPage extends Component {
                     </div>
                     </Animated>
                 </div>
-
         );
     }
 }
