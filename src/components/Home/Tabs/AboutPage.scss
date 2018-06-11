@@ -30,7 +30,7 @@ $background: #39393B;
         }
       }
     }
-    @for $i from 1 through 10 {
+    @for $i from 1 through 20 {
       .share:hover > h1 > span:nth-child(#{$i}) {
         $delay: 100 * $i;
         $random: ($i * 3) - 5;
@@ -87,8 +87,16 @@ $background: #39393B;
         width: 50%;
         .field,fields {
           label {
+            font-size: 18px;
             color: #FD630B;
           }
+        }
+      }
+      .subBlock {
+        display: flex;
+        justify-content: flex-end;
+        button {
+          background-color: #FD630B;
         }
       }
     }
@@ -96,4 +104,23 @@ $background: #39393B;
 }
 .AboutPage>* {
   margin: 100px 0 100px 0;
+}
+
+@media screen and (max-width: 650px) {
+  .MainContainer {
+    .FirstContainer, .SecondContainer {
+      h1 {
+        span {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+  .FormBlock {
+    .ui.centered.grid {
+      .form {
+        width: 95%;
+      }
+    }
+  }
 }
