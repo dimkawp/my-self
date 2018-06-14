@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import uniqueId from 'lodash/uniqueId';
+//Css
 import './DemoPage.css';
+//External
+import uniqueId from 'lodash/uniqueId';
 import { Animated } from "react-animated-css";
 import { Button, Modal, Header, Embed } from 'semantic-ui-react';
 //demo img
@@ -37,8 +39,8 @@ import imgWork7_0 from '../../../assets/imgMyProjects/work7.0.png';
 import imgWork7_1 from '../../../assets/imgMyProjects/work7.1.png';
 import imgWork7_2 from '../../../assets/imgMyProjects/work7.2.png';
 import imgWork7_3 from '../../../assets/imgMyProjects/work7.3.png';
-//bootsrapt components
-import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+//Bootstrap components
+import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
 //icons
 import IconGitHub from 'react-icons/lib/go/logo-github';
 import IconYouTube from 'react-icons/lib/io/social-youtube';
@@ -123,6 +125,7 @@ class DemoPage extends Component {
     onExiting = () => {
         this.animating = true;
     }
+
     onExited = () => {
         this.animating = false;
     }
@@ -144,8 +147,7 @@ class DemoPage extends Component {
         this.setState({ activeIndex: newIndex });
     }
 
-
-    //BUTTON ADD Project
+    //ADD Projects when scroll
     handleScroll = () => {
         if (document.documentElement.scrollTop > 500 && document.documentElement.scrollTop < 600) {
             //setTimeout(() => {},500);
@@ -178,6 +180,7 @@ class DemoPage extends Component {
         }
     }
 
+    //Category filters
     categoryAll = () => {
         let data = this.state.array.filter(function(item){
             return item;

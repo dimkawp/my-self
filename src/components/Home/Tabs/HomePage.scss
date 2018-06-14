@@ -34,6 +34,7 @@
     background-color: black;
     border-bottom: 5px solid white;
     .timeBlock {
+      font-family: 'Roboto', sans-serif;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -44,9 +45,10 @@
       .month {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         span {
-          height: 22px;
-          font-size: 22px;
+          font-size: 20px;
+          line-height: 1;
         }
       }
     }
@@ -54,7 +56,6 @@
   .contentDesc:hover {
     transition: .9s;
     cursor: pointer;
-    background-color: #FD630B;
   }
   .scrollContent {
     transition: 2s;
