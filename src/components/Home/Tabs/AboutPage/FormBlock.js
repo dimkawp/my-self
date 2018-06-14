@@ -13,6 +13,37 @@ class FormBlock extends Component {
         }
     }
 
+    ChangeFormName = (event) => {
+        this.setState({formName: event.target.value});
+    }
+    ChangeFormMail = (event) => {
+        this.setState({formMail: event.target.value});
+    }
+    ChangeFormText = (event) => {
+        this.setState({formText: event.target.value});
+    }
+    handleSubmit = () => {
+        const apiUrl = "https://api-fore-homework-13.herokuapp.com";
+        const data = {
+            name: this.state.formName,
+            mail: this.state.formMail,
+            text: this.state.formText
+        }
+        fetch(apiUrl+'/api/users/message', {
+            method: 'post',
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin':'*',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+        })
+    }
+
     render() {
         return (
             <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={2000} isVisible={true}>

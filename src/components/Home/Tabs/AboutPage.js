@@ -16,20 +16,6 @@ class AboutPage extends Component {
     componentWillMount() {
     }
 
-    ChangeFormName = (event) => {
-        this.setState({formName: event.target.value});
-    }
-    ChangeFormMail = (event) => {
-        this.setState({formMail: event.target.value});
-    }
-    ChangeFormText = (event) => {
-        this.setState({formText: event.target.value});
-    }
-    handleSubmit = (event) => {
-        console.log('Name - ' + this.state.formName, 'Mail - ' + this.state.formMail, 'Text - ' + this.state.formText);
-        event.preventDefault();
-    }
-
     render() {
         return (
             <div className="AboutPage">
