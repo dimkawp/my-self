@@ -39,6 +39,9 @@ import imgWork7_0 from '../../../assets/imgMyProjects/work7.0.png';
 import imgWork7_1 from '../../../assets/imgMyProjects/work7.1.png';
 import imgWork7_2 from '../../../assets/imgMyProjects/work7.2.png';
 import imgWork7_3 from '../../../assets/imgMyProjects/work7.3.png';
+import imgWork8_0 from '../../../assets/imgMyProjects/work8.0.png';
+import imgWork8_1 from '../../../assets/imgMyProjects/work8.1.png';
+
 //Bootstrap components
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
 //icons
@@ -106,8 +109,8 @@ class DemoPage extends Component {
                     description:'The main goal was to create a resource for fast processing of video from YouTube.\n' +
                     'The process is as follows. On this link our API downloads the video from the YouTube, then for processing (in our case, cutting out the piece), there is loading on the Api Cloudinary. After processing, a download is made to the channel, access to which was obtained at login.\n',
                     category: ['css','ruby','angular'],
-                    img: imgWork1_0,
-                    demoImg: [imgWork1_0,imgWork1_1,imgWork1_2,imgWork1_3]
+                    img: imgWork8_0,
+                    demoImg: [imgWork8_0,imgWork8_1,imgWork8_0,imgWork8_1]
                 },
 
             ],
