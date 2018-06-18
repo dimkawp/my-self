@@ -84,6 +84,9 @@ $background: #39393B;
   .FormBlock {
     .grid {
       .form {
+        .responseForm {
+          color: green;
+        }
         width: 50%;
         .field,fields {
           label {
