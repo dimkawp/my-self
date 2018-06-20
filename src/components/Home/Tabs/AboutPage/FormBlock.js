@@ -27,7 +27,7 @@ class FormBlock extends Component {
             this.setState({formSubmitBtnDisabled: false});
         }
         else {
-            console.log('INvalid - ', event.target.value);
+            console.log('InValid - ', event.target.value);
             this.setState({formSubmitBtnDisabled: true});
         }
     }
@@ -37,8 +37,6 @@ class FormBlock extends Component {
     handleSubmit = () => {
         this.setState({disableForm: true});
         const apiUrl = "https://api-fore-homework-13.herokuapp.com";
-        
-
         const data = {
             name: this.state.formName,
             mail: this.state.formMail,

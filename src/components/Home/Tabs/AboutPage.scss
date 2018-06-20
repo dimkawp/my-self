@@ -48,11 +48,70 @@ $background: #39393B;
     }
   }
 }
+.ResumePreview {
+  text-align: center;
+  margin: 50px;
+}
+.ResumeOnEmail {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 0;
+  .responseForm {
+    font-size: 18px;
+    color: green;
+  }
+  .ui.form.FormBlock {
+    height: 50px;
+    .FormInput {
+      padding: 0;
+      margin: 0;
+      input::-webkit-input-placeholder {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    input {
+      height: 50px;
+      width: 300px;
+      border: none;
+      border-bottom: 2px solid #FD630B;
+      background-color: transparent;
+      outline: none;
+      color: #FD630B;
+      font-size: 24px;
+
+    }
+    input:focus {
+      border: none;
+      border-bottom: 2px solid #FD630B;
+      color: #FD630B;
+      font-size: 24px;
+      background-color: transparent;
+      outline: none;
+
+    }
+    .FormInput:hover {
+      cursor: pointer;
+    }
+
+    button {
+      height: 100%;
+      background-color: #FD630B;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+  }
+
+}
 .AboutPage {
   background-color: transparent;
   .SocialBlock {
+    padding: 50px 0;
     .grid {
       .item {
+        opacity: 0.8;
         cursor: pointer;
         height: 50px;
         width: 50px;
@@ -85,6 +144,7 @@ $background: #39393B;
     .grid {
       .form {
         .responseForm {
+          font-size: 18px;
           color: green;
         }
         width: 50%;
@@ -108,7 +168,15 @@ $background: #39393B;
 .AboutPage>* {
   margin: 100px 0 100px 0;
 }
-
+@media screen and (max-width: 820px) {
+  .FormBlock {
+    .ui.centered.grid {
+      .form {
+        width: auto;
+      }
+    }
+  }
+}
 @media screen and (max-width: 650px) {
   .MainContainer {
     .FirstContainer, .SecondContainer {
@@ -119,9 +187,23 @@ $background: #39393B;
       }
     }
   }
+  .ResumeOnEmail {
+    .ui.form.FormBlock {
+      .responseForm {
+        font-size: 26px;
+      }
+      input {
+        width: 200px;
+      }
+    }
+
+  }
   .FormBlock {
     .ui.centered.grid {
       .form {
+        .responseForm {
+          font-size: 26px;
+        }
         width: 95%;
       }
     }

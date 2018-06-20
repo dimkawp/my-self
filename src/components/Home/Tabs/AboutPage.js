@@ -6,6 +6,8 @@ import FormBlock from './AboutPage/FormBlock';
 import SocialBlock from './AboutPage/SocialBlock';
 import TextInfoBlock from "./AboutPage/TextInfoBlock";
 import HeaderAboutBlock from './AboutPage/HeaderAboutBlock';
+import ResumeOnEmail from './AboutPage/ResumeOnEmail';
+//External
 
 class AboutPage extends Component {
     constructor(props) {
@@ -20,6 +22,7 @@ class AboutPage extends Component {
         return (
             <div className="AboutPage">
                 <HeaderAboutBlock />
+                <ResumeOnEmail />
                 <SocialBlock />
                 <TextInfoBlock />
                 <FormBlock />
