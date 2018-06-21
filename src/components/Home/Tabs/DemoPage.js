@@ -328,7 +328,7 @@ class DemoPage extends Component {
                                                                                 onExiting={this.onExiting}
                                                                                 onExited={this.onExited}
                                                                             >
-                                                                                <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%',height: '450px'}}/>
+                                                                                <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%'}}/>
                                                                             </CarouselItem>
                                                                         );
                                                                     })

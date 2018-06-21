@@ -23,6 +23,10 @@ const panes = [
         <Tab.Pane attached={false}>
             <AboutPage/>
         </Tab.Pane> },
+    { menuItem: <MenuIcon key="menuIconKey" className="menuIcon" />, render: () =>
+        <Tab.Pane attached={false}>
+        </Tab.Pane>
+    }
 ];
 
 class Home extends Component {
@@ -41,13 +45,11 @@ class Home extends Component {
         $(".menuIcon").click(function(){
             $(".menuBlock").toggle("slow");
         });
-
     }
 
     render() {
         return (
             <div className="home">
-                <MenuIcon className="menuIcon" />
                 <div className="menuBlock">
                     <div className="items">
                         <div className="item">HOME</div>

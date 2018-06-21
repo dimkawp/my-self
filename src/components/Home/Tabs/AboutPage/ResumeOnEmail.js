@@ -54,31 +54,33 @@ class ResumeOnEmail extends Component {
     }
     render() {
         return (
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
-                <Grid centered>
-                    <div className="ResumePreview">
-                        <p>My resume y can take on your email. <br/>Just Write your email in input and click submit.</p>
-                    </div>
-                </Grid>
-                <div className="ResumeOnEmail">
+            <div className="ResumeBlock">
+                <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                     <Grid centered>
-                        <Form className="FormBlock" onSubmit={this.handleSubmit}>
-                            {
-                                this.state.responseForm > '' &&
-                                <div className="responseForm">
-                                    {
-                                        this.state.responseForm
-                                    }
-                                </div>
-                            }
-                            <input disabled={this.state.disableForm} className="FormInput" placeholder='eMail' value={this.state.formMail} onChange={this.ChangeFormMail}/>
-                            <Button loading={this.state.disableForm} type='submit' disabled={this.state.formSubmitBtnDisabled}>
-                                Submit
-                            </Button>
-                        </Form>
+                        <div className="ResumePreview">
+                            <p>My resume y can take on your email. <br/>Just Write your email in input and click submit.</p>
+                        </div>
                     </Grid>
-                </div>
-            </Animated>
+                    <div className="ResumeOnEmail">
+                        <Grid centered>
+                            <Form className="FormBlock" onSubmit={this.handleSubmit}>
+                                {
+                                    this.state.responseForm > '' &&
+                                    <div className="responseForm">
+                                        {
+                                            this.state.responseForm
+                                        }
+                                    </div>
+                                }
+                                <input disabled={this.state.disableForm} className="FormInput" placeholder='eMail' value={this.state.formMail} onChange={this.ChangeFormMail}/>
+                                <Button loading={this.state.disableForm} type='submit' disabled={this.state.formSubmitBtnDisabled}>
+                                    Submit
+                                </Button>
+                            </Form>
+                        </Grid>
+                    </div>
+                </Animated>
+            </div>
         );
     }
 }

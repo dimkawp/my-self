@@ -12,15 +12,17 @@ class TextInfoBlock extends Component {
 
     render() {
         return (
-            <Animated animationIn="bounceInRight" animationOut="fadeOut" animationInDelay={1500} isVisible={true}>
-                <div className="TextInfoBlock">
-                    <Grid centered>
-                        <p>
 
-                        </p>
-                    </Grid>
+                <div className="TextInfoBlock">
+                    <Animated animationIn="bounceInRight" animationOut="fadeOut" animationInDelay={1500} isVisible={true}>
+                        <Grid centered>
+                            <p>
+
+                            </p>
+                        </Grid>
+                    </Animated>
                 </div>
-            </Animated>
+
         );
     }
 }

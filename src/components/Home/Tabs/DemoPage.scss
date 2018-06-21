@@ -154,7 +154,7 @@
         flex-direction: row;
         align-items: flex-start;
         .list {
-          margin: 10px 5px;
+          margin: 10px 10px;
         }
       }
       .title {
@@ -227,6 +227,39 @@
   }
 }
 @media screen and (max-width: 650px) {
+  //carousel in model
+  .ui.page.modals.dimmer.transition.visible.active {
+    .ui.modal.transition.visible.active {
+      .content {
+        .description {
+          .carousel.slide {
+            margin: 50px 0;
+            .carousel-item {
+              img {
+                min-height: 250px;
+                border-radius: 10px 10px;
+              }
+            }
+            .carousel-indicators {
+              li {
+                background-color: #FD630B;
+              }
+              li.active {
+                background-color: red;
+              }
+            }
+            .carousel-control-prev, .carousel-control-next {
+              .carousel-control-next-icon, .carousel-control-prev-icon {
+                cursor: pointer;
+                background-color: #FD630B;
+                border-radius: 10%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .visible.transition {
     margin: 0 auto !important;
     padding: 0;
@@ -241,7 +274,20 @@
       .item {
         width: 100%;
         img {
-          width: 100%;
+          width: 90%;
+        }
+      }
+      .item:hover {
+        opacity: .8;
+        background-color: #FD630B;
+        .title {
+          opacity: 0.4;
+        }
+        img {
+          opacity: .7;
+          transition: 1s;
+          -webkit-transform:rotate(0deg) scale(0);
+          transform:rotate(0deg) scale(0);
         }
       }
     }

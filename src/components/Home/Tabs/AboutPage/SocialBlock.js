@@ -16,15 +16,17 @@ class SocialBlock extends Component {
 
     render() {
         return (
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+
                 <div className="SocialBlock">
-                    <Grid centered>
-                        <div className="item"><a href="https://www.facebook.com/dimkawp.bond.7" target="_blank"><IconFaceBook size={20}/></a></div>
-                        <div className="item"><a href="https://www.youtube.com/channel/UCFRA75dCkcCD9X-QevTu4Qw/videos" target="_blank"><IconYouTube size={20}/></a></div>
-                        <div className="item"><a href="https://github.com/dimkawp" target="_blank"><IconGitHub size={20}/></a></div>
-                    </Grid>
+                    <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
+                        <Grid centered>
+                            <div className="item"><a href="https://www.facebook.com/dimkawp.bond.7" target="_blank"><IconFaceBook size={20}/></a></div>
+                            <div className="item"><a href="https://www.youtube.com/channel/UCFRA75dCkcCD9X-QevTu4Qw/videos" target="_blank"><IconYouTube size={20}/></a></div>
+                            <div className="item"><a href="https://github.com/dimkawp" target="_blank"><IconGitHub size={20}/></a></div>
+                        </Grid>
+                    </Animated>
                 </div>
-            </Animated>
+
         );
     }
 }
