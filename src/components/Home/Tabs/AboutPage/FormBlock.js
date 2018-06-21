@@ -63,36 +63,37 @@ class FormBlock extends Component {
 
     render() {
         return (
-            <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={2000} isVisible={true}>
-                <div className="FormBlock">
-                    <Grid centered>
-                        <Form onSubmit={this.handleSubmit}>
+            <div className="FormBlock">
+                <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={2000} isVisible={true}>
+                <Grid centered>
+                    <Form onSubmit={this.handleSubmit}>
+                    {
+                        this.state.disableForm === true &&
+                        <Dimmer active>
+                            <Loader inverted>Loading</Loader>
+                        </Dimmer>
+                    }
+                    {
+                        this.state.responseForm > '' &&
+                        <div className="responseForm">
                         {
-                            this.state.disableForm === true &&
-                            <Dimmer active>
-                                <Loader inverted>Loading</Loader>
-                            </Dimmer>
+                            this.state.responseForm
                         }
-                        {
-                            this.state.responseForm > '' &&
-                            <div className="responseForm">
-                            {
-                                this.state.responseForm
-                            }
-                            </div>
-                        }
-                            <Form.Group widths='equal'>
-                                <Form.Field control={Input} label='Name' placeholder='Name'  value={this.state.formName} onChange={this.ChangeFormName} />
-                                <Form.Field control={Input} label='Mail' placeholder='Mail' value={this.state.formMail} onChange={this.ChangeFormMail}/>
-                            </Form.Group>
-                            <Form.Field control={TextArea} label='Text' placeholder='Tell us more about you...' value={this.state.formText} onChange={this.ChangeFormText}/>
-                            <div className="subBlock">
-                                <Button type='submit' disabled={this.state.formSubmitBtnDisabled}>Submit</Button>
-                            </div>
-                        </Form>
-                    </Grid>
-                </div>
-            </Animated>
+                        </div>
+                    }
+                        <Form.Group widths='equal'>
+                            <Form.Field control={Input} label='Name' placeholder='Name'  value={this.state.formName} onChange={this.ChangeFormName} />
+                            <Form.Field control={Input} label='Mail' placeholder='Mail' value={this.state.formMail} onChange={this.ChangeFormMail}/>
+                        </Form.Group>
+                        <Form.Field control={TextArea} label='Text' placeholder='Tell us more about you...' value={this.state.formText} onChange={this.ChangeFormText}/>
+                        <div className="subBlock">
+                            <Button type='submit' disabled={this.state.formSubmitBtnDisabled}>Submit</Button>
+                        </div>
+                    </Form>
+                </Grid>
+                </Animated>
+            </div>
+
         );
     }
 }

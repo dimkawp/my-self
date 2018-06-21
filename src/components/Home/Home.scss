@@ -21,7 +21,19 @@
         height: 100px;
         font-size: 36px;
         cursor: pointer;
+        a {
+          color: white;
+        }
+        a:hover {
+          transition: 1s;
+          text-decoration: none;
+          text-shadow: 1px 1px 6px rgba(0, 0, 0, 1);
+        }
       }
+    }
+    .item:hover {
+      opacity: .9;
+      cursor: pointer;
     }
   }
   .menuIcon:hover {
@@ -65,6 +77,7 @@
       margin: 1px;
     }
     a.item:hover {
+      transition: 1s;
       color: #FD630B;
       cursor: pointer;
     }

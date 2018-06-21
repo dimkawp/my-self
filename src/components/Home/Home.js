@@ -52,9 +52,9 @@ class Home extends Component {
             <div className="home">
                 <div className="menuBlock">
                     <div className="items">
-                        <div className="item">HOME</div>
-                        <div className="item">INFO</div>
-                        <div className="item">ABOUT</div>
+                        <div className="item"><a href="">HOME</a></div>
+                        <div className="item"><a href="">INFO</a></div>
+                        <div className="item"><a href="">ABOUT</a></div>
                     </div>
                 </div>
                 <video poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="myVideo" playsInline autoPlay muted loop>

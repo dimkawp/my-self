@@ -141,7 +141,18 @@
       }
     }
     .contentDesc {
-
+      .timeBlock {
+        font-family: 'Roboto', sans-serif;
+        .clock {
+          font-size: 24px;
+        }
+        .month {
+          span {
+            font-size: 11px;
+            line-height: 1;
+          }
+        }
+      }
     }
   }
 }
