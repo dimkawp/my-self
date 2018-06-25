@@ -72,24 +72,26 @@ $background: #39393B;
       }
     }
     input {
+      opacity: .45;
       height: 50px;
       width: 300px;
       border: none;
+      border-radius: 0;
       border-bottom: 2px solid #FD630B;
       background-color: transparent;
       outline: none;
       color: #FD630B;
       font-size: 24px;
-
     }
     input:focus {
+      opacity: 1;
       border: none;
+      border-radius: 0;
       border-bottom: 2px solid #FD630B;
       color: #FD630B;
       font-size: 24px;
       background-color: transparent;
       outline: none;
-
     }
     .FormInput:hover {
       cursor: pointer;
@@ -98,6 +100,7 @@ $background: #39393B;
     button {
       height: 100%;
       background-color: #FD630B;
+      border-radius: 5px 5px 5px 0;
     }
     button:hover {
       cursor: pointer;
@@ -150,6 +153,33 @@ $background: #39393B;
             font-size: 18px;
             color: #FD630B;
           }
+          textarea {
+            color: white;
+            border: none;
+            outline: none;
+            background-color: transparent;
+          }
+          textarea:focus {
+            cursor: pointer;
+            border-radius: 0;
+            border-bottom: 1px solid #FD630B;
+          }
+          .input {
+            input {
+              border: none;
+              outline: none;
+              background-color: transparent;
+            }
+            input:focus {
+              cursor: pointer;
+              color: white;
+              border: none;
+              outline: none;
+              border-radius: 0;
+              border-bottom: 1px solid #FD630B;
+              background-color: transparent;
+            }
+          }
         }
       }
       .subBlock {
@@ -162,7 +192,7 @@ $background: #39393B;
     }
   }
 }
-.AboutPage>* {
+.AboutPage > * {
   margin: 100px 0 100px 0;
 }
 @media screen and (max-width: 820px) {
