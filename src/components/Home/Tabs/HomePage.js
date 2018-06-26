@@ -58,7 +58,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <Animated animationIn="flash" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
+            <Animated animationIn="flash" animationOut="fadeOut" animationInDelay={1600} isVisible={true}>
                 <div className="HomePage">
                     <HomePageContent />
                     <Parallax className="parallax" strength={500}>

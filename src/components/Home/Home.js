@@ -9,6 +9,7 @@ import VideoBG from '../../assets/Video/Graphic.mp4';
 import $ from 'jquery';
 //icons
 import MenuIcon from 'react-icons/lib/fa/align-justify';
+import Preloader from "./Prleloader";
 
 const panes = [
     { menuItem: 'HOME', render: () =>
@@ -50,6 +51,7 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
+                <Preloader/>
                 <div className="menuBlock">
                     <div className="items">
                         <div className="item"><a href="">HOME</a></div>
