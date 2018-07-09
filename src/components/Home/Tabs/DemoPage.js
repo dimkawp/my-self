@@ -41,6 +41,9 @@ import imgWork7_2 from '../../../assets/imgMyProjects/work7.2.png';
 import imgWork7_3 from '../../../assets/imgMyProjects/work7.3.png';
 import imgWork8_0 from '../../../assets/imgMyProjects/work8.0.png';
 import imgWork8_1 from '../../../assets/imgMyProjects/work8.1.png';
+import imgWork9_0 from '../../../assets/imgMyProjects/work9.0.png';
+import imgWork9_1 from '../../../assets/imgMyProjects/work9.1.png';
+import imgWork9_2 from '../../../assets/imgMyProjects/work9.2.png';
 
 //Bootstrap components
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators } from 'reactstrap';
@@ -111,6 +114,13 @@ class DemoPage extends Component {
                     category: ['css','ruby','angular'],
                     img: imgWork8_0,
                     demoImg: [imgWork8_0,imgWork8_1,imgWork8_0,imgWork8_1]
+                },
+                { id: 9, title: 'WOK', prevTitle: 'ReactJS',
+                    links: ['https://github.com/dimkawp/work-wok', 'https://world-of-keg.herokuapp.com/', false],
+                    description:'My old project rebuild on React',
+                    category: ['css','jQuery','react'],
+                    img: imgWork9_0,
+                    demoImg: [imgWork9_0,imgWork9_1,imgWork9_2,imgWork9_1]
                 },
 
             ],
