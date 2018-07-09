@@ -10,7 +10,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #FD630B;
+    background: #1180fc;
     .items {
       height: 100%;
       display: flex;
@@ -37,7 +37,7 @@
     }
   }
   .menuIcon:hover {
-    color: #FD630B;
+    color: #1180fc;
   }
   #myVideo {
     position: fixed;
@@ -67,8 +67,8 @@
       cursor: pointer;
     }
     a.item.active {
-      color: #FD630B;
-      border-color: #FD630B;
+      color: #1180fc;
+      border-color: #1180fc;
     }
     a.item {
       font-family: 'Cormorant Unicase', serif;
@@ -78,7 +78,7 @@
     }
     a.item:hover {
       transition: 1s;
-      color: #FD630B;
+      color: #1180fc;
       cursor: pointer;
     }
   }

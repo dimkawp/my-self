@@ -6,14 +6,14 @@
   .ui.modal.transition.visible.active {
     background-color: transparent;
     .header {
-      color: #FD630B;
+      color: #1180fc;
       font-family: 'Cormorant Unicase', serif;
       font-size: 30px;
       text-align: center;
       background-color: transparent;
     }
     .content {
-      color: #FD630B;
+      color: #1180fc;
       background-color: transparent;
       .description {
         .header {
@@ -26,11 +26,27 @@
           text-align: justify;
           font-size: 22px;
         }
+        .TrigerSliderBlock {
+          display: flex;
+          justify-content: center;
+          button {
+            cursor: pointer;
+            color: #1180fc;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 22px;
+          }
+        }
         .LinksBlock {
           display: flex;
           flex-direction: row;
           a {
-            color: #FD630B;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #1180fc;
             margin: 5px;
           }
           a:hover {
@@ -42,12 +58,12 @@
           margin: 50px 0;
           .carousel-item {
             img {
-              border-radius: 10px 10px;
+              border-radius: 5px 5px;
             }
           }
           .carousel-indicators {
             li {
-              background-color: #FD630B;
+              background-color: #1180fc;
             }
             li.active {
               background-color: red;
@@ -56,7 +72,7 @@
           .carousel-control-prev, .carousel-control-next {
             .carousel-control-next-icon, .carousel-control-prev-icon {
               cursor: pointer;
-              background-color: #FD630B;
+              background-color: #1180fc;
               border-radius: 10%;
             }
           }
@@ -64,10 +80,10 @@
       }
     }
     .actions {
-      color: #FD630B;
+      color: #1180fc;
       background-color: transparent;
       button {
-        background-color: #FD630B;
+        background-color: #1180fc;
       }
       button:hover {
         transition: .4s ease-out;
@@ -112,8 +128,9 @@
   .categoryButtons {
     button {
       cursor: pointer;
-      color: #FD630B;
-      border: 1px solid #FD630B;
+      color: #1180fc;
+      text-shadow: 4px 4px 8px rgba(255, 255, 255, 1);
+      border: 1px solid #1180fc;
       border-radius: 5px 5px 5px 5px;
       padding: 10px 20px;
       margin: 5px;
@@ -169,7 +186,14 @@
         width: 80%;
       }
       .ui.orange.basic.button.triggerModal {
-        color: white!important;
+        cursor: pointer;
+        color: #1180fc !important;
+        text-shadow: 4px 4px 8px rgba(255, 255, 255, 1);
+        border: 1px solid #1180fc;
+        border-radius: 5px 5px 5px 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        background: transparent;
       }
       .triggerModal {
         border: solid 1px white;
@@ -181,7 +205,7 @@
     }
     .item:hover {
       opacity: .9;
-      background: #FD630B;
+      background: #1180fc;
       img {
         opacity: .1;
         transition: 1s;
@@ -241,7 +265,7 @@
             }
             .carousel-indicators {
               li {
-                background-color: #FD630B;
+                background-color: #1180fc;
               }
               li.active {
                 background-color: red;
@@ -250,7 +274,7 @@
             .carousel-control-prev, .carousel-control-next {
               .carousel-control-next-icon, .carousel-control-prev-icon {
                 cursor: pointer;
-                background-color: #FD630B;
+                background-color: #1180fc;
                 border-radius: 10%;
               }
             }
@@ -278,7 +302,7 @@
       }
       .item:hover {
         opacity: .8;
-        background-color: #FD630B;
+        background-color: #1180fc;
         .title {
           opacity: 0.4;
         }

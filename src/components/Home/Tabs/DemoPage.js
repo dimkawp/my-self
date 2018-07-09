@@ -116,7 +116,9 @@ class DemoPage extends Component {
             ],
             workArray: [],
             scrolled: false,
-            arrayCountShow: 9
+            arrayCountShow: 9,
+            SliderBlock: false,
+            TrigerSliderStatus: 'Open'
 
         }
     }
@@ -261,18 +263,27 @@ class DemoPage extends Component {
         console.log(data);
     }
 
+    TrigerSliderBlock = () => {
+        this.setState({SliderBlock: !this.state.SliderBlock});
+        if (this.state.SliderBlock === true) {
+            this.state.TrigerSliderStatus = 'Open'
+        } else {
+            this.state.TrigerSliderStatus = 'Close'
+        }
+    }
+
     render() {
         const { activeIndex } = this.state;
         return (
                 <div className="demoPage" onScroll={this.handleScroll}>
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={500} isVisible={true}>
                     <div className="categoryButtons">
-                        <button onClick={this.categoryAll}>all</button>
-                        <button onClick={this.categoryRuby}>Ruby</button>
-                        <button onClick={this.categoryCss}>Css</button>
-                        <button onClick={this.categoryAngular}>Angular</button>
-                        <button onClick={this.categoryReact}>React</button>
-                        <button onClick={this.categoryjQuery}>jQuery</button>
+                        <button className="categoryButton" onClick={this.categoryAll}>all</button>
+                        <button className="categoryButton" onClick={this.categoryRuby}>Ruby</button>
+                        <button className="categoryButton" onClick={this.categoryCss}>Css</button>
+                        <button className="categoryButton" onClick={this.categoryAngular}>Angular</button>
+                        <button className="categoryButton" onClick={this.categoryReact}>React</button>
+                        <button className="categoryButton" onClick={this.categoryjQuery}>jQuery</button>
                     </div>
                     </Animated>
                     <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
@@ -296,7 +307,7 @@ class DemoPage extends Component {
                                         <div className="title">{item.title}</div>
                                         <div className="description">{item.prevTitle}</div>
                                         <Modal
-                                            trigger={<Button basic color='orange' className="triggerModal">Show</Button>}
+                                            trigger={<Button basic color='blue' className="triggerModal">Show</Button>}
                                             header={item.title}
                                             content={
                                                     <Modal.Content>
@@ -314,45 +325,54 @@ class DemoPage extends Component {
                                                             </div>
                                                             </Animated>
                                                             <Animated animationIn="bounceInLeft" animationOut="fadeOut" animationInDelay={1000} isVisible={true}>
-                                                            <Carousel
-                                                                activeIndex={activeIndex}
-                                                                next={this.next}
-                                                                previous={this.previous}
-                                                            >
-                                                                <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                                                                <div className="TrigerSliderBlock">
+                                                                    <button onClick={this.TrigerSliderBlock}>{this.state.TrigerSliderStatus} Slider</button>
+                                                                </div>
                                                                 {
-                                                                    item.demoImg.map((img, key) => {
-                                                                        return (
-                                                                            <CarouselItem
-                                                                                key={uniqueId()}
-                                                                                onExiting={this.onExiting}
-                                                                                onExited={this.onExited}
-                                                                            >
-                                                                                <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%'}}/>
-                                                                            </CarouselItem>
-                                                                        );
-                                                                    })
+                                                                    this.state.SliderBlock === true &&
+                                                                    <Carousel
+                                                                        activeIndex={activeIndex}
+                                                                        next={this.next}
+                                                                        previous={this.previous}
+                                                                    >
+                                                                        <CarouselIndicators items={item.demoImg} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                                                                        {
+                                                                            item.demoImg.map((img, key) => {
+                                                                                return (
+                                                                                    <CarouselItem
+                                                                                        key={uniqueId()}
+                                                                                        onExiting={this.onExiting}
+                                                                                        onExited={this.onExited}
+                                                                                    >
+                                                                                        <img key={uniqueId()} src={img} alt="slider img" style={{width: '100%'}}/>
+                                                                                    </CarouselItem>
+                                                                                );
+                                                                            })
+                                                                        }
+                                                                        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
+                                                                        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+                                                                    </Carousel>
                                                                 }
-                                                                <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                                                                <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-                                                            </Carousel>
                                                             <div className="LinksBlock">
                                                                 {
                                                                     item.links[2] !== false &&
                                                                     <a href={"https://www.youtube.com/watch?v="+item.links[2]} target="_blank">
-                                                                        <IconYouTube size={30}/>
+                                                                        <span>Link on Video</span>
+                                                                        <IconYouTube size={40}/>
                                                                     </a>
                                                                 }
                                                                 {
                                                                     item.links[0] !== false &&
                                                                     <a href={item.links[0]} target="_blank">
-                                                                        <IconGitHub size={30}/>
+                                                                        <span>Link on GitHub</span>
+                                                                        <IconGitHub size={40}/>
                                                                     </a>
                                                                 }
                                                                 {
                                                                     item.links[1] !== false &&
                                                                     <a href={item.links[1]} target="_blank">
-                                                                        <IconHeroku size={30}/>
+                                                                        <span>Link on Demo</span>
+                                                                        <IconHeroku size={40}/>
                                                                     </a>
                                                                 }
                                                             </div>

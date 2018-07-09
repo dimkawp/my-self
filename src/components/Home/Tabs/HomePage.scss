@@ -1,23 +1,31 @@
 /*HomePage*/
 .HomePage {
   .contentTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     z-index: 9;
     position: absolute;
     bottom: 0;
-    right: 0;
     color: white;
-    background-color: black;
+    background-color: transparent;
     .items {
-      height: 825px;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
       .item {
         padding: 50px;
+        a {
+          color: white;
+        }
+        a:hover {
+          color: #1180fc;
+        }
       }
       .item:hover {
+        color: #1180fc;
         cursor: pointer;
-        background-color: #FD630B;
         transition: 0.9s;
         opacity: 1;
       }
@@ -133,6 +141,7 @@
   .HomePage {
     .contentTitle {
       .items {
+        display: none;
         height: auto;
         flex-direction: row;
         .item {

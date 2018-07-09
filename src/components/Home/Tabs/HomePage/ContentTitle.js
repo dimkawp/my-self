@@ -10,14 +10,23 @@ class ContentTitle extends Component {
         this.state = {
         }
     }
+    ReloadPage = () => {
+        window.location.reload();
+    }
 
     render() {
         return (
             <div className="contentTitle">
                 <div id="secondMenu" className="items">
-                    <div className="item"><IconRepeat size={50}/></div>
-                    <div className="item"><IconGithub size={50}/></div>
-                    <div className="item"><IconWindows size={50}/></div>
+                    <div className="item" onClick={this.ReloadPage}>
+                        <a href="" ><IconRepeat size={50}/></a>
+                    </div>
+                    <div className="item">
+                        <a href="https://github.com/dimkawp" target="_blank"><IconGithub size={50}/></a>
+                    </div>
+                    <div className="item">
+                        <a href=""><IconWindows size={50}/></a>
+                    </div>
                 </div>
             </div>
         );
