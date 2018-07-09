@@ -293,6 +293,13 @@
     right: 0;
   }
   .demoPage {
+    .categoryButtons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      button {
+      }
+    }
     .items {
       .item {
         width: 100%;
