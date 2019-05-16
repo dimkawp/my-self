@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-//Components
-import ContentDesc from './HomePage/ContentDesc';
-import ContentTitle from './HomePage/ContentTitle';
-import HomePageContent from './HomePage/HomePageContent';
+import TitleContainerInfo from "./HomePage/TitleContainerInfo";
+import Posts from './HomePage/Post'
 //Css
 import './HomePage.css';
 import BgOne from '../../../assets/Home/bg-one.jpg';
@@ -12,66 +10,46 @@ import { Animated } from "react-animated-css";
 import { Parallax, Background } from 'react-parallax';
 
 class HomePage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showBanner: false
-        }
-    }
-//JQ
-    componentDidMount() {
-        $(document).ready(function() {
-            $('.contentTitle').hide();
-            $('.contentDesc').hide();
-            $('.welcomeBlock').hide();
-        });
-        $('.parallax').mouseover(function () {
-            $('.welcomeBlock').show();
-        });
-        $('.parallax').mouseout(function () {
-            $('.welcomeBlock').hide();
-        });
+	constructor(props) {
+		super(props);
+		this.state = {
+			showBanner: false,
+			items: [
+				{id: 1, title: 'Title 1', description: 'description'},
+				{id: 2, title: 'Title 2', description: 'description'},
+				{id: 3, title: 'Title 3', description: 'description'},
+				{id: 4, title: 'Title 4', description: 'description'},
+				{id: 5, title: 'Title 5', description: 'description'}
+			],
+			posts: [
+				{id: 1, title: 'Title 1 POST', description: 'description'},
+				{id: 2, title: 'Title 1 POST', description: 'description'},
+				{id: 3, title: 'Title 1 POST', description: 'description'},
+				{id: 4, title: 'Title 1 POST', description: 'description'},
+				{id: 5, title: 'Title 1 POST', description: 'description'}
+			]
+		}
+	}
+	//JQ
+	componentDidMount() {
+		//$(window).scroll(function() {
+		//    if ($(this).scrollTop()>750) {
 
-        $(window).scroll(function() {
-            if ($(this).scrollTop()>750)
-            {
-                $('.contentTitle').fadeIn("slow");
-                $('.contentTitle').addClass("scrollContent");
-                $('.contentDesc').fadeIn("slow");
-                $('.contentTitle').css({position: 'fixed'});
-            }
-            if ($(this).scrollTop()<750)
-            {
-                $('.contentDesc').hide();
-                $('.contentTitle').css({position: 'absolute'});
-            }
-            if ($(this).scrollTop()<700)
-            {
-                $('.contentTitle').removeClass("scrollContent");
-            }
-            if ($(this).scrollTop()<50)
-            {
-                $('.contentTitle').fadeOut("slow");
-            }
-        });
-    }
+		//    }
+		//});
+	}
 
-    render() {
-        return (
-            <Animated animationIn="flash" animationOut="fadeOut" animationInDelay={1600} isVisible={true}>
-                <div className="HomePage">
-                    <HomePageContent />
-                    <Parallax className="parallax" strength={500}>
-                        <Background className="custom-bg">
-                            <img src={BgOne} alt="fill murray" />
-                        </Background>
-                    </Parallax>
-                    <ContentTitle />
-                    <ContentDesc />
-                </div>
-            </Animated>
-        );
-    }
+	render() {
+		return (
+			<Animated animationIn="flash" animationOut="fadeOut" animationInDelay={1600} isVisible={true}>
+				<div className="HomePage">
+					<TitleContainerInfo items={this.state.items} />
+					<Posts posts={this.state.posts}/>
+					<div className="footer footer-home-page">footer</div>
+				</div>
+			</Animated>
+		);
+	}
 }
 
 export default HomePage;
